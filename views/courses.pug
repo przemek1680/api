@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Lista kierunków
+  body
+    h1 Lista kierunków
+
+    table.table.table-striped
+      thead
+        tr
+          th Nazwa
+          th Wydział
+      tbody
+        each course in courses
+          tr
+            td= course.name
+            td= course.department
+            td
+              a.btn.btn-primary(href=`/courses/edit/${course._id}`) Edit
+              form(style='display: inline-block', method='POST', action=`/courses/delete/${course._id}`)
+                input(type='hidden' name='_method' value='DELETE')
+                button.btn.btn-danger(type='submit') Delete
+
+    h2 Dodaj kierunek
+    form(method='POST', action='/courses/add')
+      div.form-group
+        label(for='name') Nazwa
+        input.form-control(type='text', id='name', name='name', required)
+      div.form-group
+        label(for='department') Wydział
+        textarea.form-control(id='department', name='department', required)
+      button.btn.btn-success(type='submit') Dodaj

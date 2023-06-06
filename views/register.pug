@@ -1,0 +1,11 @@
+doctype html
+html
+  head
+    title Rejestracja
+  body
+    h1 Rejestracja
+    form(action='/api/user/register' method='post')
+      input(type='text' name='username' placeholder='Nazwa użytkownika')
+      input(type='text' name='email' placeholder='Email')
+      input(type='password' name='password' placeholder='Hasło')
+      button(type='submit') Zarejestruj się

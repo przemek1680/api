@@ -1,0 +1,39 @@
+doctype html
+html
+  head
+    title Panel administratora
+  body
+    h1 Panel administratora
+    p Jesteś zalogowany jako administrator
+    form(method='POST' action='/api/user/logout')
+      input(type='submit' value='Logout')
+
+    h2 Strony dostępne dla wszystkich 
+    a(href='/') Strona główna 
+    br
+    a(href='/register') Rejestracja
+    br
+    a(href='/login') Logowanie
+    br 
+    a(href='/lecturers') Lista wykładowców
+
+    h2 Strony dostępne dla zalogowanych 
+    a(href='/profile') Strona profilowa 
+    br
+    a(href='/students') Lista studentów
+    br
+    a(href='/courses') Lista kierunków
+    br 
+
+    h2 Strony dostępne dla administratora 
+    a(href='/admin') Panel administratora 
+  
+    h2 Dodawanie nowego użytkownika 
+    form(action='/api/user/register' method='post')
+      input(type='text' name='username' placeholder='Nazwa użytkownika')
+      br
+      input(type='text' name='email' placeholder='Email')
+      br
+      input(type='password' name='password' placeholder='Hasło')
+      br
+      button(type='submit') Dodaj użytkownika

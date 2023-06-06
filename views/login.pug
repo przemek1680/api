@@ -1,0 +1,10 @@
+doctype html
+html
+  head
+    title Logowanie
+  body
+    h1 Logowanie
+    form(action='/api/user/login' method='post')
+      input(type='text' name='username' placeholder='Nazwa użytkownika')
+      input(type='password' name='password' placeholder='Hasło')
+      button(type='submit') Zaloguj się

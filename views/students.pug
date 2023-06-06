@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Studenci
+  body
+    h1 Lista studentów 
+    ul
+      each student in students
+        li= student.name + " - " +student.course

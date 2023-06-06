@@ -1,0 +1,15 @@
+doctype html
+html
+  head
+    title Edit Course
+  body
+    h1 Edit Course
+
+    form(method='POST', action=`/courses/edit/${course._id}`)
+      div.form-group
+        label(for='name') Name
+        input.form-control(type='text', id='name', name='name', value=course.name, required)
+      div.form-group
+        label(for='department') Department
+        textarea.form-control(id='description', name='department', required)= course.department
+      button.btn.btn-primary(type='submit') Update

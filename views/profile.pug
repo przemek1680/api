@@ -1,0 +1,32 @@
+doctype html
+html
+  head
+    title Profil użytkownika
+  body
+    h1 Witaj, jesteś zalogowany
+    form(method='POST' action='/api/user/logout')
+      input(type='submit' value='Logout')
+    
+    h2 Zmień hasło
+    form(method='POST' action='/api/user/change-password')
+      label(for='password') Aktualne hasło
+      input(type='password' id='currentPassword' name='currentPassword' required)
+      br
+      label(for='newPassword') Nowe hasło
+      input(type='password' id='newPassword' name='newPassword' required)
+      br
+      label(for='confirmPassword') Potwierdź zmianę hasła 
+      input(type='password' id='confirmPassword' name='confirmPassword' required)
+      br
+      input(type='submit' value='ZMIEŃ')
+
+      
+      h2 Strony dostępne dla zalogowanych 
+      a(href='/profile') Strona profilowa 
+      br
+      a(href='/students') Lista studentów
+      br
+      a(href='/courses') Lista kierunków
+      br 
+
+      

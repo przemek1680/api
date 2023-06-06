@@ -1,0 +1,9 @@
+doctype html
+html
+  head
+    title Wykładowcy
+  body
+    h1 Wykładowcy
+    ul
+      each lecturer in lecturers
+        li= lecturer.name + " - " + lecturer.department
